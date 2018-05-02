@@ -1,0 +1,17 @@
+{
+  "name": "gh-pages-test",
+  "version": "0.0.0",
+  "repository": "git@github.com:rkrupinski/gh-pages-test.git",
+  "scripts": {
+    "cleanup": "rm -rf build",
+    "compile": "tsc src/*.ts --outDir build --strict",
+    "copy": "cp src/index.html build",
+    "build": "yarn run cleanup && yarn run compile && yarn run copy",
+    "deploy": "yarn run build && gh-pages -d build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^1.1.0",
+    "typescript": "^2.8.3"
+  }
+}
